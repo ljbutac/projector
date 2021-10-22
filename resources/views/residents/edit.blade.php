@@ -128,8 +128,10 @@
                             <label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>
 
                             <div class="col-md-6">
-                                <input id="sex" type="text" class="form-control @error('name') is-invalid @enderror" 
-                                name="sex" value="{{ old('sex',$resident->sex) }}" required autocomplete="sex" autofocus>
+                                <select class="form-control" name="sex" id="exampleFormControlSelect1">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
 
                                 @error('sex')
                                     <span class="invalid-feedback" role="alert">
@@ -143,8 +145,12 @@
                             <label for="civilstatus" class="col-md-4 col-form-label text-md-right">{{ __('Civil Status') }}</label>
 
                             <div class="col-md-6">
-                                <input id="civilstatus" type="text" class="form-control @error('name') is-invalid @enderror" 
-                                name="civilstatus" value="{{ old('civilstatus',$resident->civilstatus) }}" required autocomplete="civilstatus" autofocus>
+                                <select class="form-control" name="civilstatus" id="exampleFormControlSelect1">
+                                    <option>Single</option>
+                                    <option>Married</option>
+                                    <option>Widowed</option>
+                                    <option>Divorced</option>
+                                </select>
 
                                 @error('civilstatus')
                                     <span class="invalid-feedback" role="alert">
@@ -187,8 +193,10 @@
                             <label for="ps" class="col-md-4 col-form-label text-md-right">{{ __('4 PS') }}</label>
 
                             <div class="col-md-6">
-                                <input id="ps" type="text" class="form-control @error('name') is-invalid @enderror" 
-                                name="ps" value="{{ old('ps',$resident->ps) }}" required autocomplete="ps" autofocus>
+                                <select class="form-control" name="ps" id="exampleFormControlSelect1">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
 
                                 @error('ps')
                                     <span class="invalid-feedback" role="alert">
@@ -220,7 +228,7 @@
     @csrf
     @method('DELETE')
 
-    <button class="btn btn-danger">Delete Id no: {{$resident->id}}</button>
+    <button class="btn btn-danger">Delete</button>
 </form>
         </div>
     </div>
