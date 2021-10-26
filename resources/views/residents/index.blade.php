@@ -82,13 +82,8 @@
       <td>{{ $resident->occupation}}</td>
       <td>{{ $resident->ps}}</td>
       <td> 
-
-      <a href="{{route('residents.edit',$resident->id) }}" 
-        class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-        <form method="POST" action="{{route('residents.destroy', $resident->id) }}">
-    @csrf
-    @method('DELETE')
-    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+      <a href="{{route('residents.edit',$resident->id) }}" class="btn btn-primary">Edit </a> 
+   
       </td>
 
     </tr>
