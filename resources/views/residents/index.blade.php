@@ -1,3 +1,6 @@
+
+
+
 @extends('layouts.main')
 
 
@@ -27,10 +30,11 @@
                    <div class="form-row align-items-center">
                        <div class="col">
                            <input type="search" name="search" class="form-control mb-2" id="inlineFormInput"
-                                    placeholder="Search Id and Address">
+                                    placeholder="Search  Address">
                     </div>
                     <div class="col">
                         <button type="submit" class="btn btn-primary mb-2">Search</button>
+                       
                 </div>
                 <a href="{{ route('residents.index') }}" class="btn btn-info mb-2">Back</a>
             </div>
@@ -44,7 +48,7 @@
                 </div>
             
 </div>
-<div class="table-responsive">
+<div class="card-body">
 <table class="table">
   <thead>
     <tr>
@@ -54,14 +58,7 @@
       <th scope="col">MiddleName</th>
       <th scope="col">Age</th>
       <th scope="col">Address</th>
-      <th scope="col">PlaceofBirth</th>
-      <th scope="col">DateofBirth</th>
-      <th scope="col">Sex</th>
-      <th scope="col">CivilStatus</th>
-      <th scope="col">Citizenship</th>
-      <th scope="col">Occupation</th>
-      <th scope="col">4 PS</th>
-      <th scope="col">Action</th>
+      <th scope="col">Operation</th>
 
     </tr>
   </thead>
@@ -74,23 +71,81 @@
       <td>{{ $resident->mname}}</td>
       <td>{{ $resident->age}}</td>
       <td>{{ $resident->address}}</td>
-      <td>{{ $resident->placeofbirth}}</td>
-      <td>{{ $resident->dateofbirth}}</td>
-      <td>{{ $resident->sex}}</td>
-      <td>{{ $resident->civilstatus}}</td>
-      <td>{{ $resident->citizenship}}</td>
-      <td>{{ $resident->occupation}}</td>
-      <td>{{ $resident->ps}}</td>
+
       <td> 
-      <a href="{{route('residents.edit',$resident->id) }}" class="btn btn-primary">Edit </a> 
+        <div class="btn-group">
+        <a href="{{route('residents.show',$resident->id) }}" class="btn btn-info"><i class="fas fa-eye"></i> </a> 
+
+       <!-- Button trigger modal -->
+       <a href="{{route('residents.edit',$resident->id) }}" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal">
+          <i class="fas fa-pencil"></i> </a> 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you want to edit?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <a href="{{route('residents.edit',$resident->id) }}" class="btn btn-primary" >Yes</a>
+  
+      </div>
+    </div>
+  </div>
+    </div>
    
+
+  
+<!-- Button trigger modal -->
+<button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal1"><i class="fas fa-trash"></i></button>
+<form  action="{{route('residents.destroy', $resident->id) }}" method="POST">
+@csrf
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+
+        <button  class="btn btn-danger">Yes</button>
+
+       
+        @method('DELETE')
+      </div>
+   
+    </div>
+ 
+  </div>
+</div>
+  
+</form>  
+
+</div>
+
+      
       </td>
 
     </tr>
   @endforeach
   </tbody>
 </table>
-
+{{$residents->links()}}
 
 </div>
 </div>

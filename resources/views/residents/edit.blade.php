@@ -15,8 +15,7 @@
             <div class="card">
                 <div class="alert alert-info">
                     {{ __('Update Fill Up Form') }}
-                     <a href="{{ route('residents.index') }}" class="float-right">Back</a>
-
+                    <a href="{{ route('residents.index') }}" class="btn btn-info float-right">Back</a>
                 </div>
                
                 <div class="card-body">
@@ -128,10 +127,11 @@
                             <label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="sex" id="exampleFormControlSelect1">
+                            <select class="form-control" name="sex" id="exampleFormControlSelect1 " value="{{ old('sex',$resident->sex) }}">
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
+  
 
                                 @error('sex')
                                     <span class="invalid-feedback" role="alert">
@@ -145,12 +145,16 @@
                             <label for="civilstatus" class="col-md-4 col-form-label text-md-right">{{ __('Civil Status') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="civilstatus" id="exampleFormControlSelect1">
+
+
+                         
+                                <select class="form-control" name="civilstatus" value="{{ old('civilstatus',$resident->civilstatus) }}"id="exampleFormControlSelect1">
                                     <option>Single</option>
                                     <option>Married</option>
                                     <option>Widowed</option>
                                     <option>Divorced</option>
                                 </select>
+                         
 
                                 @error('civilstatus')
                                     <span class="invalid-feedback" role="alert">
@@ -164,9 +168,11 @@
                             <label for="citizenship" class="col-md-4 col-form-label text-md-right">{{ __('Citizenship') }}</label>
 
                             <div class="col-md-6">
-                                <input id="citizenship" type="text" class="form-control @error('name') is-invalid @enderror" 
-                                name="citizenship" value="{{ old('citizenship',$resident->citizenship) }}" required autocomplete="citizenship" autofocus>
-
+                            <select class="form-control" name="citizenship" id="exampleFormControlSelect1"  value="{{ old('citizenship',$resident->citizenship) }}">
+                                    <option>Filipino</option>
+                                 
+                                </select>
+                                
                                 @error('citizenship')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -193,10 +199,11 @@
                             <label for="ps" class="col-md-4 col-form-label text-md-right">{{ __('4 PS') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="ps" id="exampleFormControlSelect1">
+                            <select class="form-control" name="ps" id="exampleFormControlSelect1" value="{{ old('ps',$resident->ps) }}">
                                     <option>Yes</option>
                                     <option>No</option>
                                 </select>
+                                
 
                                 @error('ps')
                                     <span class="invalid-feedback" role="alert">
@@ -220,17 +227,7 @@
                 </div>
             </div>
 
-            <div class="m-2 p-2">
-
-
-            
-<form method="POST" action="{{route('residents.destroy', $resident->id) }}">
-    @csrf
-    @method('DELETE')
-
-    <button class="btn btn-danger">Delete</button>
-</form>
-        </div>
+           
     </div>
 </div>
     @endsection
