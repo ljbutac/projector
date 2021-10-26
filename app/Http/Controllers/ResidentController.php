@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\residentStorerequest;
 use App\Http\Requests\residentUpdaterequest;
 use App\Http\Controllers\ResidentController;
+use Pagination;
+
+
 class ResidentController extends Controller
 {
     /**
@@ -21,10 +24,10 @@ class ResidentController extends Controller
      */
     public function index(Request $request)
     {
-        $residents = Resident::all();
+        $residents = Resident::simplePaginate(2);
         if($request->has('search')){
-            $residents = Resident::where('id', 'like', "%{$request->search}%")->orWhere('address', 'like', "%{$request->search}%")->get();
-        }
+            $residents = Resident::where('address', 'like', "%{$request->search}%")->simplePaginate(2);
+        } 
         return view('residents.index', compact('residents'));
     }
 
@@ -74,7 +77,9 @@ class ResidentController extends Controller
      */
     public function show($id)
     {
-        //
+        $resident = resident::find($id);
+
+        return view('residents.see')->with("resident", $resident);
     }
 
     /**
