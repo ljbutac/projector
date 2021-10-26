@@ -223,12 +223,8 @@
             <div class="m-2 p-2">
 
 
-            
-<form method="POST" action="{{route('residents.destroy', $resident->id) }}">
-    @csrf
-    @method('DELETE')
+        
 
-    <button class="btn btn-danger">Delete</button>
 </form>
         </div>
     </div>
