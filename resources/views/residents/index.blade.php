@@ -53,9 +53,9 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">LastName</th>
-      <th scope="col">FirstName</th>
-      <th scope="col">MiddleName</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Middle Name</th>
       <th scope="col">Age</th>
       <th scope="col">Address</th>
       <th scope="col">Operation</th>
