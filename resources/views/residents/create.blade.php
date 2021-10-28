@@ -132,6 +132,7 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="sex" id="exampleFormControlSelect1">
+                                    <option>Select</option>
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
@@ -150,6 +151,7 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="civilstatus" id="exampleFormControlSelect1">
+                                    <option>Select</option>
                                     <option>Single</option>
                                     <option>Married</option>
                                     <option>Widowed</option>
@@ -201,6 +203,7 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="ps" id="exampleFormControlSelect1">
+                                    <option>Select</option>
                                     <option>Yes</option>
                                     <option>No</option>
                                 </select>

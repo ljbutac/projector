@@ -24,7 +24,7 @@ class ResidentController extends Controller
      */
     public function index(Request $request)
     {
-        $residents = Resident::simplePaginate(2);
+        $residents = Resident::simplePaginate(5);
         if($request->has('search')){
             $residents = Resident::where('lname', 'like', "%{$request->search}%")
              ->orWhere('fname', 'LIKE', '%' . $request->search . '%')->orWhere('mname', 'LIKE', '%' . $request->search . '%')->orWhere('id', 'LIKE', '%' . $request->search . '%')
