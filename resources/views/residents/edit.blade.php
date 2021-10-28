@@ -128,6 +128,7 @@
 
                             <div class="col-md-6">
                             <select class="form-control" name="sex" id="exampleFormControlSelect1 " value="{{ old('sex',$resident->sex) }}">
+                                    <option>Select</option>
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
@@ -149,6 +150,7 @@
 
                          
                                 <select class="form-control" name="civilstatus" value="{{ old('civilstatus',$resident->civilstatus) }}"id="exampleFormControlSelect1">
+                                    <option>Select</option>
                                     <option>Single</option>
                                     <option>Married</option>
                                     <option>Widowed</option>
@@ -200,6 +202,7 @@
 
                             <div class="col-md-6">
                             <select class="form-control" name="ps" id="exampleFormControlSelect1" value="{{ old('ps',$resident->ps) }}">
+                                    <option>Select</option>
                                     <option>Yes</option>
                                     <option>No</option>
                                 </select>
