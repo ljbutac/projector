@@ -35,7 +35,7 @@
             </form>
             </div>
             <div>
-                <a href="{{route('users.create') }}" class="float-right"> Create</a>
+                <a href="{{route('users.create') }}" class ="btn btn-success" class="float-right"> Create</a>
                     </div>
                 </div>
             
@@ -57,7 +57,7 @@
       <td>{{ $user->username }}</td>
       <td>{{ $user->email }}</td>
       <td>   
-          <a href="{{route('users.edit',$user->id) }}" class="btn btn-success">Edit</a>
+          <a href="{{route('users.edit',$user->id) }}" class="btn btn-primary"><i class="fas fa-pencil"></i></a>
       </td>
     </tr>
 

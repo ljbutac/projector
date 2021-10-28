@@ -21,6 +21,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin.min.css') }}" rel="stylesheet">
+    @yield('css')
 
 </head>
 
@@ -32,41 +33,36 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Nav Item - Dashboard -->
+     
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+            
+                  
+                    <a class="nav-link active" href="{{ route('dashboards.index')}}">Dashboard</a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item ">
-                <a class="nav-link" href="{{ route('residents.index')}}">Resident Management</a>
+         
+                <a class="nav-link active" href="{{ route('residents.index')}}">Resident Management</a>
+            
             </li>
 
+            <li class="nav-item ">
+         
+         <a class="nav-link active" href="{{ route('users.index')}}">User Management</a>
+     
+     </li>
+
+         
             <!-- Divider -->
             <hr class="sidebar-divider">
 
       
 
      
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser"
-                    aria-expanded="true" aria-controls="collapseUser">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>User Management</span>
-                </a>
-                <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                 
-                        <a class="collapse-item" href="{{ route('users.index')}}">User</a>
-                       
-                    
-                    </div>
-                </div>
-            </li>
+      
 
     
 
@@ -83,7 +79,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+                <i class="fas fa-city"></i>     <h1 >Nueva Era</h1>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
@@ -92,11 +88,12 @@
                 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
+                  
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="nav-item dropdown no-arrow ">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->username}}</span>
                             
                             </a>
@@ -144,10 +141,7 @@
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
+         
                 </div>
             </footer>
             <!-- End of Footer -->

@@ -15,8 +15,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Update User') }}
-
-                <a href="{{ route('users.index') }}" class="float-right">back</a>
+<div class="float-right">
+                <a href="{{ route('users.index') }}" class ="btn btn-info" >back </a>
+</div>
                 </div>
              
                 <div class="card-body">
@@ -86,24 +87,22 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Update user') }}
-                                </button>
-                            </div>
+                                <i class="fas fa-save"></i>
+                                </button>   
+                                <form method="POST" action="{{route('users.destroy', $user->id) }}">
+   
+    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+    @csrf
+    @method('DELETE')
+
+</form>
+            
+                                </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="m-2 p-2">
-
-
-            
-            <form method="POST" action="{{route('users.destroy', $user->id) }}">
-                @csrf
-                @method('DELETE')
-
-                <button class="btn btn-danger">Delete {{$user->username}}</button>
-</form>
-            </div>
+          
         </div>
     </div>
 </div>

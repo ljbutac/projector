@@ -1,0 +1,10 @@
+.form-group row {
+    display: flex;
+   
+  }
+  
+  .form-group row > div {
+    text-transform: capitalize;
+
+ 
+  }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ResidentController;
 /*
@@ -15,11 +16,13 @@ use App\Http\Controllers\ResidentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('dashboards', DashboardController::class);
 Route::resource('users', UserController::class);
 Route::resource('residents', ResidentController::class);

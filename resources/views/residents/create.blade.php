@@ -132,7 +132,6 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="sex" id="exampleFormControlSelect1">
-                                    <option>Select</option>
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
@@ -151,7 +150,6 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="civilstatus" id="exampleFormControlSelect1">
-                                    <option>Select</option>
                                     <option>Single</option>
                                     <option>Married</option>
                                     <option>Widowed</option>
@@ -170,10 +168,12 @@
                             <label for="citizenship" class="col-md-4 col-form-label text-md-right">{{ __('Citizenship') }}</label>
 
                             <div class="col-md-6">
-                            <select class="form-control" name="citizenship" id="exampleFormControlSelect1">
-                                    <option>Filipino</option>
+                      <input disable id="citizenship" type="text" class="form-control" name="citizenship" 
+                      placeholder="Filipino" value="Filipino">
+                      
+                         
                                  
-                                </select>
+                               
                                 @error('citizenship')
                                 <span class="alert alert-primary" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -201,7 +201,6 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="ps" id="exampleFormControlSelect1">
-                                    <option>Select</option>
                                     <option>Yes</option>
                                     <option>No</option>
                                 </select>
