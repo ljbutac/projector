@@ -22,7 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('dashboards', DashboardController::class);
 Route::resource('users', UserController::class);
 Route::resource('residents', ResidentController::class);
