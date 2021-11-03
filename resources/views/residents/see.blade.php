@@ -12,6 +12,8 @@
                         <h1 class="alert alert-secondary">Barangay Information System</h1>
                        
                     </div>
+
+
 <div class="row">
 <div class=" card mx-auto">
 
