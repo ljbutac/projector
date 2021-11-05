@@ -181,7 +181,7 @@ i
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+</div>
 
                        
                     <!-- Content Row -->
@@ -190,48 +190,48 @@ i
 
             <!---- Pie Chart for Female and Male ---->    
                         
-<?php
-$con = mysqli_connect("localhost","root","roots","dbprojector");
-?>
+                        <?php
+                        $con = mysqli_connect("localhost","root","roots","dbprojector");
+                        ?>
 
 
-<div class="card border-left-primary shadow h-350 py-2">
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+                        <div class="card border-left-primary shadow h-350 py-2">
+                        <head>
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <script type="text/javascript">
+                            google.charts.load('current', {'packages':['corechart']});
+                            google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+                            function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Sex', 'Number'],
+                                var data = google.visualization.arrayToDataTable([
+                                ['Sex', 'Number'],
 
-          <?php
+                                <?php
 
-          $sql="SELECT sex, count(*) as number FROM residents GROUP BY sex";
-          $fire=mysqli_query($con,$sql);
-                while($result = mysqli_fetch_assoc($fire))
-                echo "['".$result["sex"]."', ".$result["number"]."],";
+                                $sql="SELECT sex, count(*) as number FROM residents GROUP BY sex";
+                                $fire=mysqli_query($con,$sql);
+                                        while($result = mysqli_fetch_assoc($fire))
+                                        echo "['".$result["sex"]."', ".$result["number"]."],";
 
-          ?>
-          
-        ]);
+                                ?>
+                                
+                                ]);
 
-        var options = {
-          title: 'Pie Chart for Gender'
-        };
+                                var options = {
+                                title: 'Pie Chart for Gender'
+                                };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="piechart" style="width: 500px; "></div>
-  </body>
-  </div>
+                                chart.draw(data, options);
+                            }
+                            </script>
+                        </head>
+                        <body>
+                            <div id="piechart" style="width: 500px; "></div>
+                        </body>
+                        </div>
 
 
                       
