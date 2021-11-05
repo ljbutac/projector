@@ -9,10 +9,26 @@ use App\Http\Requests\UserUpdateRequest;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Controllers\UserController;
 class UserController extends Controller
 {
+
+
+
+
+
+    /**
+    
+     * @return \Illuminate\Http\Response
+     */
+    public function viewUserRole()
+    {
+        $useRole = DB::table('users')->count();
+        dd($useRole);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

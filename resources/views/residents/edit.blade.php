@@ -23,7 +23,7 @@
                         @csrf
                        @method('PUT')
                         <div class="form-group row">
-                            <label for="lname" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
+                            <label for="lname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="lname" type="text" class="form-control @error('name') is-invalid @enderror" 
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('Firstname') }}</label>
+                            <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="fname" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="mname" class="col-md-4 col-form-label text-md-right">{{ __('Middlename') }}</label>
+                            <label for="mname" class="col-md-4 col-form-label text-md-right">{{ __('Middle Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="mname" type="text" class="form-control @error('name') is-invalid @enderror" 
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="placeofbirth" class="col-md-4 col-form-label text-md-right">{{ __('PlaceofBirth') }}</label>
+                            <label for="placeofbirth" class="col-md-4 col-form-label text-md-right">{{ __('Place of Birth') }}</label>
 
                             <div class="col-md-6">
                                 <input id="placeofbirth" type="text" class="form-control @error('name') is-invalid @enderror" 
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="dateofbirth" class="col-md-4 col-form-label text-md-right">{{ __('DateofBirth') }}</label>
+                            <label for="dateofbirth" class="col-md-4 col-form-label text-md-right">{{ __('Date of Birth') }}</label>
 
                             <div class="col-md-6">
                                 <input id="dateofbirth" type="date" class="form-control @error('name') is-invalid @enderror" 
@@ -128,7 +128,7 @@
 
                             <div class="col-md-6">
                             <select class="form-control" name="sex" id="exampleFormControlSelect1 " value="{{ old('sex',$resident->sex) }}">
-                                    <option>Select</option>
+                                    <option>Option</option>
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
@@ -150,7 +150,7 @@
 
                          
                                 <select class="form-control" name="civilstatus" value="{{ old('civilstatus',$resident->civilstatus) }}"id="exampleFormControlSelect1">
-                                    <option>Select</option>
+                                    <option>Option</option>
                                     <option>Single</option>
                                     <option>Married</option>
                                     <option>Widowed</option>
@@ -202,7 +202,7 @@
 
                             <div class="col-md-6">
                             <select class="form-control" name="ps" id="exampleFormControlSelect1" value="{{ old('ps',$resident->ps) }}">
-                                    <option>Select</option>
+                                    <option>Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
                                 </select>

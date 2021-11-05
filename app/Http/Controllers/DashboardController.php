@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Dashboard;
-
+use DB;
 class DashboardController extends Controller
 {
     /**
@@ -14,8 +14,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-      
-        return view('dashboard.index');
+        $user = DB::table('users')->count();
+        $resident = DB::table('residents')->count();
+        return view('dashboard.index',compact('user','resident'));
     }
 
     /**
@@ -45,12 +46,10 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
        
-        $useRole = DB::table('users')->get()->count();
-        dd($useRole);
-        return view('dashboard.index',compact('useRole'));
+        //
     }
 
     /**
