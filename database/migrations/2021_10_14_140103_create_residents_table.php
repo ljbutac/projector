@@ -20,6 +20,8 @@ class CreateResidentsTable extends Migration
             $table->string('mname');
             $table->string('age');
             $table->string('address');
+            $table->string('town');
+            $table->string('province');
             $table->string('placeofbirth');
             $table->date('dateofbirth');
             $table->string('sex');

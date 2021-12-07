@@ -13,6 +13,8 @@ class Resident extends Model
         'mname',
         'age',
         'address',
+        'town',
+        'province',
         'placeofbirth',
         'dateofbirth',
         'sex',

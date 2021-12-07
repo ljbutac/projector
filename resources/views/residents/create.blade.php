@@ -88,8 +88,20 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('name') is-invalid @enderror" 
-                                name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+                                <select class="form-control" name="address" id="exampleFormControlSelect1">
+                                    <option>Select Barangay</option>
+                                    <option>Acnam</option>
+                                    <option>Barangobong</option>
+                                    <option>Barikir</option>
+                                    <option>Bugayong</option>
+                                    <option>Cabittauran</option>
+                                    <option>Caray</option>
+                                    <option>Garnaden</option>
+                                    <option>Naguillan (Pagpag-ong)</option>
+                                    <option>Poblacion</option>
+                                    <option>Santo Niño</option>
+                                    <option>Uguis</option>
+                                </select>
 
                                 @error('address')
                                 <span class="alert alert-primary" role="alert">
@@ -98,6 +110,47 @@
                                 @enderror
                             </div>
                         </div>
+
+
+                        <div class="form-group row">
+                            <label for="town" class="col-md-4 col-form-label text-md-right">{{ __('Town') }}</label>
+
+                            <div class="col-md-6">
+                      <input disable id="town" type="text" class="form-control" name="town" 
+                      placeholder="Nueva Era" value="Nueva Era">
+                      
+                         
+                                 
+                               
+                                @error('town')
+                                <span class="alert alert-primary" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="town" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
+
+                            <div class="col-md-6">
+                      <input disable id="province" type="text" class="form-control" name="province" 
+                      placeholder="Ilocos Norte" value="Ilocos Norte">
+                      
+                         
+                                 
+                               
+                                @error('province')
+                                <span class="alert alert-primary" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+
                         <div class="form-group row">
                             <label for="placeofbirth" class="col-md-4 col-form-label text-md-right">{{ __('Place of Birth') }}</label>
 

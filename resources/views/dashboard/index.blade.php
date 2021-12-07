@@ -1,4 +1,3 @@
-i
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,20 +73,7 @@ i
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
+                    
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                   
@@ -130,8 +116,8 @@ i
                     <div class="row">
 
                         <!-- Total Residents -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="col-xl-5 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-200 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -146,15 +132,15 @@ i
                             </div>
                         </div>
 
-                        <!--Total User  -->
-            
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+
+                        <!--  -->
+                        <div class="col-xl-5 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-200 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <h6 class="m-b-20">Total User</h6>
-                                            <h2 class="text-right"><i class="fa fa-user f-left"></i><span>{{$user}}</span></h2>
+                                            <h6 class="m-b-20">????</h6>
+                                            <h2 class="text-right"><i class="fa fa-user f-left"></i><span>0000</span></h2>
                                             
 
                                     
@@ -164,89 +150,87 @@ i
                             </div>
                         </div>
 
-                        
-                    <!--Total  -->
-                                
-                    <div class="col-xl-3 col-md-6 mb-4">
-                                                <div class="card border-left-primary shadow h-100 py-2">
-                                                    <div class="card-body">
-                                                        <div class="row no-gutters align-items-center">
-                                                            <div class="col mr-2">
-                                                                <h6 class="m-b-20">???</h6>
-                                                                <h2 class="text-right"><i class="fa fa-user f-left"></i><span>000</span></h2>
-                                                                
 
-                                                        
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                        
+    
 </div>
 
-                       
-                    <!-- Content Row -->
+            
 
-                    <div class="row">
+        <!-- Content Row -->
+        <div class="row">
 
-            <!---- Pie Chart for Female and Male ---->    
-                        
-                        <?php
-                        $con = mysqli_connect("localhost","root","roots","dbprojector");
-                        ?>
+                        <!-- Pie Chart -->
+                
+                         <?php
+                         $con = mysqli_connect("localhost","root","roots","dbprojector");
+                         ?>
+
+                             <div class="card border-left-primary shadow h-100 py-2">
+
+                         <head>
+                             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                             <script type="text/javascript">
+                             google.charts.load('current', {'packages':['corechart']});
+                             google.charts.setOnLoadCallback(drawChart);
+             
+                             function drawChart() {
+             
+                                 var data = google.visualization.arrayToDataTable([
+                                 ['Address', 'Number'],
+             
+                                 <?php
+             
+                                 $sql="SELECT address, count(*) as number FROM residents GROUP BY address";
+                                 $fire=mysqli_query($con,$sql);
+                                         while($result = mysqli_fetch_assoc($fire))
+                                         echo "['".$result["address"]."', ".$result["number"]."],";
+                                 ?> 
+                                 ]);
+             
+                                 var options = {
+                                 title: 'TOTAL NO. PER BARANGAY'
+                                 };
+             
+                                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+             
+                                 chart.draw(data, options);
+                             }
+                             </script>
+                         </head>
+                         <body>
+                             <div id="piechart" style="width: 900px; height: 400px; "></div>
+                            </body>
+                         <div>
+            
+       <!-- /.container-fluid -->
 
 
-                        <div class="card border-left-primary shadow h-350 py-2">
-                        <head>
-                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                            <script type="text/javascript">
-                            google.charts.load('current', {'packages':['corechart']});
-                            google.charts.setOnLoadCallback(drawChart);
-
-                            function drawChart() {
-
-                                var data = google.visualization.arrayToDataTable([
-                                ['Sex', 'Number'],
-
-                                <?php
-
-                                $sql="SELECT sex, count(*) as number FROM residents GROUP BY sex";
-                                $fire=mysqli_query($con,$sql);
-                                        while($result = mysqli_fetch_assoc($fire))
-                                        echo "['".$result["sex"]."', ".$result["number"]."],";
-
-                                ?>
-                                
-                                ]);
-
-                                var options = {
-                                title: 'Pie Chart for Gender'
-                                };
-
-                                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-                                chart.draw(data, options);
-                            }
-                            </script>
-                        </head>
-                        <body>
-                            <div id="piechart" style="width: 500px; "></div>
-                        </body>
-                        </div>
-
-
-                      
-                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
-     
+
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Page Wrapper -->  
 
+                            
+        <!-- Card Body -->
+        <div class="card-body">
+            <div class="chart-area">
+                <canvas id="myAreaChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>

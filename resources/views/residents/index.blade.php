@@ -71,6 +71,7 @@
       <td>{{ $resident->age}}</td>
       <td>{{ $resident->address}}</td>
 
+
       <td> 
         <div class="btn-group">
         <a href="{{route('residents.show',$resident->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a> 

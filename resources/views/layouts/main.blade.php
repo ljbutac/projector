@@ -79,7 +79,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <i class="fas fa-city"></i>     <h1 >Nueva Era</h1>
+                <i class="fas fa-city"></i> <h1 >Nueva Era</h1>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
@@ -110,8 +110,6 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                              
-                             
                                 </a>
                             </div>
                         </li>
@@ -124,12 +122,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                    @yield('content')
-                    </div>
-
-                     
-
-              
-                   
+                    </div> 
                  </div>
                 <!-- /.container-fluid -->
 

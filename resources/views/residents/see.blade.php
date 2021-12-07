@@ -52,7 +52,8 @@
       <th scope="col">MiddleName</th>
       <th scope="col">Age</th>
       <th scope="col">Address</th>
-    
+      <th scope="col">Town</th>
+      <th scope="col">Province</th>
       <th scope="col">PlaceofBirth</th>
       <th scope="col">DateofBirth</th>
       <th scope="col">Sex</th>
@@ -72,6 +73,8 @@
       <td>{{ $resident->mname}}</td>
       <td>{{ $resident->age}}</td>
       <td>{{ $resident->address}}</td>
+      <td>{{ $resident->town}}</td>
+      <td>{{ $resident->province}}</td>
       <td>{{ $resident->placeofbirth}}</td>
       <td>{{ $resident->dateofbirth}}</td>
       <td>{{ $resident->sex}}</td>
